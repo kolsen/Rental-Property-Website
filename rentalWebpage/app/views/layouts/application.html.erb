@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>RentalWebpage</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>RentalWebpage</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+    <div class="container">
+      <header>
+        <h1>Rental Property Listing</h1>
+      </header>
+      <section class="content">
+        <%= yield %>
+      </section>
+      <footer>
+        <h4>Copyright <%=Date.today.year %></h4>
+      </footer>
+    </div>
 </html>
