@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @add_property.address %>
+</p>
+
+<p>
+  <strong>Apartment:</strong>
+  <%= @add_property.apartment %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @add_property.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @add_property.state %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @add_property.zipcode %>
+</p>
+
+<p>
+  <strong>Rooms:</strong>
+  <%= @add_property.rooms %>
+</p>
+
+<p>
+  <strong>Bathrooms:</strong>
+  <%= @add_property.bathrooms %>
+</p>
+
+<%= link_to 'Edit', edit_add_property_path(@add_property) %> |
+<%= link_to 'Back', add_properties_path %>

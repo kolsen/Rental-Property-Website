@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :add_properties
+
   get 'review/addReview'
 
   root controller: 'home', action: 'index'
