@@ -1,28 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Property Details</h2>
+<h4>Address:</h4>
 <p>
-  <strong>Address:</strong>
-  <%= @add_property.address %>
+  <%= @add_property.address + " " + @add_property.apartment %>
 </p>
 
 <p>
-  <strong>Apartment:</strong>
-  <%= @add_property.apartment %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @add_property.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @add_property.state %>
-</p>
-
-<p>
-  <strong>Zipcode:</strong>
-  <%= @add_property.zipcode %>
+  <%= @add_property.city + ", " + @add_property.state + " " + @add_property.zipcode %>
 </p>
 
 <p>
@@ -35,5 +20,6 @@
   <%= @add_property.bathrooms %>
 </p>
 
-<%= link_to 'Edit', edit_add_property_path(@add_property) %> |
-<%= link_to 'Back', add_properties_path %>
+<%= link_to 'Back', add_properties_path %> |
+<%= link_to 'Edit', edit_add_property_path(@add_property) %>
+
