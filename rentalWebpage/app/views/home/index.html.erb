@@ -2,3 +2,28 @@
   <input type="text" name="rental_search">
   <input type="submit" name="rental_search" value="Search">
 </form>
+<table>
+  <tr>
+    <th>Address</th>
+    <th>Apt</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zipcode</th>
+    <th>Rooms</th>
+    <th>Bathrooms</th>
+    <th>**Rating**</th>
+  </tr>
+  <% for property in @add_properties %>
+    <tr>
+      <td><%= property.address %></td>
+      <td><%= property.apartment %></td>
+      <td><%= property.city %></td>
+      <td><%= property.state %></td>
+      <td><%= property.zipcode %></td>
+      <td><%= property.rooms %></td>
+      <td><%= property.bathrooms %></td>
+      <td>(1-5)</td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'New Property', new_add_property_path %>
