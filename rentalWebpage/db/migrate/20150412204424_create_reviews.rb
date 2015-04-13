@@ -1,7 +1,7 @@
 class CreateReviews < ActiveRecord::Migration
   def change
     create_table :reviews do |t|
-      t.sting :review
+      t.string :review
 
       t.timestamps null: false
     end
