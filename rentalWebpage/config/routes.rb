@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :add_properties
+  resources :properties
 
   get 'review/addReview'
 

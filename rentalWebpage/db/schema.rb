@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150412204424) do
+ActiveRecord::Schema.define(version: 20150415184118) do
 
-  create_table "add_properties", force: :cascade do |t|
+  create_table "properties", force: :cascade do |t|
     t.string   "address"
     t.string   "apartment"
     t.string   "city"

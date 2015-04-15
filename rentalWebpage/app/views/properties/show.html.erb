@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Property Details</h2>
+<h4>Address:</h4>
+<p>
+  <%= @property.address + " " + @property.apartment %>
+</p>
+
+<p>
+  <%= @property.city + ", " + @property.state + " " + @property.zipcode %>
+</p>
+
+<p>
+  <strong>Rooms:</strong>
+  <%= @property.rooms %>
+</p>
+
+<p>
+  <strong>Bathrooms:</strong>
+  <%= @property.bathrooms %>
+</p>
+
+<%= link_to 'Back', properties_path %> |
+<%= link_to 'Edit', edit_property_path(@property) %>
+

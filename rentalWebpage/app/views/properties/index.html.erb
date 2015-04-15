@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1 >Choose a property to edit</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @properties.each do |property| %>
+      <tr>
+        <td><%= property.address + " " + property.apartment %></td>
+      </tr>
+      <tr>
+        <td><%= property.city + ", " + property.state + " "  + property.zipcode %></td>
+      </tr>
+      <tr>
+        <td><b>Number of Rooms: </b><%= property.rooms %></td>
+      </tr>
+      <tr>
+        <td><b>Number of Bathrooms: </b><%= property.bathrooms %></td>
+      </tr>
+      <tr>
+    <td><%= link_to 'Additional Details', property %></td>
+        <td><%= link_to 'Edit', edit_property_path(property) %></td>
+        <td><%= link_to 'Delete', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back to Search', root_path %>  |
+<%= link_to 'Add Property', new_property_path %>
