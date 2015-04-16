@@ -19,6 +19,25 @@
   <strong>Bathrooms:</strong>
   <%= @property.bathrooms %>
 </p>
+<h2>Reviews</h2>
+<% @property.reviews.each do |review| %>
+
+ 
+  <p id = "review">
+    <%= review.review %>
+  </p>
+<% end %>
+
+<h2>Add a review:</h2>
+<%= form_for([@property, @property.reviews.build]) do |f| %>
+  <p>
+    <%= f.label :review %><br>
+    <%= f.text_area :review %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
 
 <%= link_to 'Back', properties_path %> |
 <%= link_to 'Edit', edit_property_path(@property) %>
