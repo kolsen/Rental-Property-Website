@@ -44,6 +44,10 @@
     <%= f.number_field :bathrooms %>
   </div>
   <div class="actions">
-    <%= f.submit "Add Property"%>
+    <% if @property.id.nil? %>
+      <%= f.submit "Add Property" %>
+    <% else %>
+      <%= f.submit "Update Property"%>
+    <% end %>
   </div>
 <% end %>
