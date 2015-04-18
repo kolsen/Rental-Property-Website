@@ -12,31 +12,35 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :address %><br>
+    <%= f.label :address, "Address:" %><br>
     <%= f.text_field :address %>
+    <%=" (required)" %>
   </div>
   <div class="field">
-    <%= f.label :apartment %><br>
+    <%= f.label :apartment, "Apt/Unit/Suite" %><br>
     <%= f.text_field :apartment %>
   </div>
   <div class="field">
-    <%= f.label :city %><br>
+    <%= f.label :city, "City:" %><br>
     <%= f.text_field :city %>
+    <%=" (required)" %>
   </div>
   <div class="field">
-    <%= f.label :state %><br>
+    <%= f.label :state, "State:" %><br>
     <%= f.text_field :state %>
+    <%=" (required)" %>
   </div>
   <div class="field">
-    <%= f.label :zipcode %><br>
+    <%= f.label :zipcode, "Zipcode:" %><br>
     <%= f.text_field :zipcode %>
+    <%=" (required)" %>
   </div>
   <div class="field">
-    <%= f.label :rooms %><br>
+    <%= f.label :rooms, "Number of Bedrooms:" %><br>
     <%= f.number_field :rooms %>
   </div>
   <div class="field">
-    <%= f.label :bathrooms %><br>
+    <%= f.label :bathrooms, "Number of Bathrooms:" %><br>
     <%= f.number_field :bathrooms %>
   </div>
   <div class="actions">
