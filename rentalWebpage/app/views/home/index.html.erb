@@ -24,7 +24,7 @@
       <td><%= property.rooms %></td>
       <td><%= property.bathrooms %></td>
       <td>(1-5)</td>
-      <td><%= property.reviews.count %></td>
+      <td><%= link_to property.reviews.count, property %></td>
     </tr>
   <% end %>
 </table>
