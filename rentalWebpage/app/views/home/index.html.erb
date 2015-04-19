@@ -12,6 +12,7 @@
     <th>Bedrooms</th>
     <th>Bathrooms</th>
     <th>**Rating**</th>
+    <th>Reviews</th>
   </tr>
   <% for property in @properties %>
     <tr>
@@ -23,6 +24,7 @@
       <td><%= property.rooms %></td>
       <td><%= property.bathrooms %></td>
       <td>(1-5)</td>
+      <td><%= property.reviews.count %></td>
     </tr>
   <% end %>
 </table>
