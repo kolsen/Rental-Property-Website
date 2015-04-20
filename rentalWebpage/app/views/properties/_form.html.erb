@@ -1,7 +1,7 @@
 <%= form_for(@property) do |f| %>
   <% if @property.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@property.errors.count, "error") %> prohibited this add_property from being saved:</h2>
+      <h2>Oh no! There are <%= pluralize(@property.errors.count, "error") %>! Please resolve and try again:</h2>
 
       <ul>
       <% @property.errors.full_messages.each do |message| %>

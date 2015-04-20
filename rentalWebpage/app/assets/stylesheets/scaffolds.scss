@@ -40,18 +40,19 @@ div {
 }
 
 .field_with_errors {
-  padding: 2px;
+  color: white;
+  padding: 1px;
   background-color: red;
-  display: table;
+  display: inline-block;
 }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: none;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: #fff;
   h2 {
     text-align: left;
     font-weight: bold;
@@ -59,10 +60,11 @@ div {
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #c00;
+    background-color: red;
     color: #fff;
   }
   ul li {
+    font-weight: bold;
     font-size: 12px;
     list-style: square;
   }
