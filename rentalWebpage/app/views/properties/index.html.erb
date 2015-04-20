@@ -24,7 +24,7 @@
         <td><b>Number of Bathrooms: </b><%= property.bathrooms %></td>
       </tr>
       <tr>
-    <td><%= link_to 'Additional Details', property %></td>
+        <td><%= link_to 'More Details', property %></td>
         <td><%= link_to 'Edit', edit_property_path(property) %></td>
         <td><%= link_to 'Delete', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -34,5 +34,5 @@
 
 <br>
 
-<%= link_to 'Back to Search', root_path %>  |
-<%= link_to 'Add Property', new_property_path %>
+<strong><%= link_to 'Home', root_path %></strong>  |
+<strong><%= link_to 'Add New Property', new_property_path %></strong>
