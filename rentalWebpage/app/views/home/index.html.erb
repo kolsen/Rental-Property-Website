@@ -3,16 +3,16 @@
   <%= button_to 'Search' %>
 </form>
 <table>
-  <tr>
-    <th>Address</th>
-    <th>Apt</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zipcode</th>
-    <th>Bedrooms</th>
-    <th>Bathrooms</th>
-    <th>**Rating**</th>
-    <th>Reviews</th>
+  <tr style="text-align: left">
+    <th>Address: </th>
+    <th>Apt: </th>
+    <th>City: </th>
+    <th>State: </th>
+    <th>Zipcode: </th>
+    <th>Bedrooms: </th>
+    <th>Bathrooms: </th>
+    <th>Rating: </th>
+    <th>Reviews: </th>
   </tr>
   <% for property in @properties %>
     <tr>
@@ -27,6 +27,5 @@
       <td><%= link_to property.reviews.count, property %></td>
     </tr>
   <% end %>
-</table>
-<%= link_to 'New Property', new_property_path %>
-<%= link_to 'Edit Properties', properties_path %>
+</table><br>
+<strong><%= link_to 'Add New Property', new_property_path %></strong>
