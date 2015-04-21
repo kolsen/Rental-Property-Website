@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416210229) do
+ActiveRecord::Schema.define(version: 20150419005247) do
 
   create_table "properties", force: :cascade do |t|
     t.string   "address"
@@ -27,9 +27,10 @@ ActiveRecord::Schema.define(version: 20150416210229) do
 
   create_table "reviews", force: :cascade do |t|
     t.string   "review"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "property_id"
+    t.integer  "helpful_total"
   end
 
   add_index "reviews", ["property_id"], name: "index_reviews_on_property_id"
