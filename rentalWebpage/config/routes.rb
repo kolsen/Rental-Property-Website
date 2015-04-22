@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     resources :reviews
 end
 
-  get controller: 'reviews', action:'addReview'
+  #get controller: 'home', action:'addReview'
+  get "/addReview", controller: 'reviews', action: 'addReview', as: 'addReview'
 
   root controller: 'home', action: 'index'
 
