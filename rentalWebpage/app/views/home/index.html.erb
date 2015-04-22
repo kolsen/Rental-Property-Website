@@ -1,7 +1,11 @@
-<form action="search">
-  <%= text_field :search_property, :property %>
-  <%= button_to 'Search' %>
-</form>
+<%= form_tag root_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+<strong><%= flash[:notice] %></strong>
+<br><br>
 <table>
   <tr style="text-align: left">
     <th>Address: </th>
