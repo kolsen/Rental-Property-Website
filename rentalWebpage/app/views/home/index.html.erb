@@ -20,13 +20,13 @@
   </tr>
   <% for property in @properties %>
     <tr>
-      <td><%= property.address %></td>
-      <td><%= property.apartment %></td>
-      <td><%= property.city %></td>
-      <td><%= property.state %></td>
-      <td><%= property.zipcode %></td>
-      <td><%= property.rooms %></td>
-      <td><%= property.bathrooms %></td>
+      <td><%= link_to property.address, property %></td>
+      <td><%= link_to property.apartment, property %></td>
+      <td><%= link_to property.city, property %></td>
+      <td><%= link_to property.state, property %></td>
+      <td><%= link_to property.zipcode, property %></td>
+      <td><%= link_to property.rooms, property %></td>
+      <td><%= link_to property.bathrooms, property %></td>
       <td>(1-5)</td>
       <td><%= link_to property.reviews.count, property %></td>
     </tr>
