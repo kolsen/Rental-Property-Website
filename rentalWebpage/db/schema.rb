@@ -13,16 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150423203803) do
 
-  create_table "identities", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "provider"
-    t.string   "uid"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "identities", ["user_id"], name: "index_identities_on_user_id"
-
   create_table "properties", force: :cascade do |t|
     t.string   "address"
     t.string   "apartment"
