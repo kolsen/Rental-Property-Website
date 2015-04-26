@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150419005247) do
+ActiveRecord::Schema.define(version: 20150423203803) do
 
   create_table "properties", force: :cascade do |t|
     t.string   "address"
@@ -34,5 +34,15 @@ ActiveRecord::Schema.define(version: 20150419005247) do
   end
 
   add_index "reviews", ["property_id"], name: "index_reviews_on_property_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
 end

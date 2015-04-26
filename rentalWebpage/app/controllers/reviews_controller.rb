@@ -9,8 +9,15 @@ class ReviewsController < ApplicationController
     helpful = Review.find(params[:review_id])
     helpful.update_attribute(:helpful_total, helpful.helpful_total + 1)
   end
+  
   private
   def review_params
     params.require(:review).permit(:review, :helpful_total)
   end
+  
+  def addReview
+    
+  end
+  
+  
 end
