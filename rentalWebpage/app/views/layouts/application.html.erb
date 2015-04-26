@@ -10,6 +10,13 @@
       <header>
         <h1>Rental Property Listing</h1>
       </header>
+      <%= form_tag property_listing_property_listing_path, :method => 'get' do %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search", :name => nil %>
+        </p>
+      <% end %>
+      <strong><%= flash[:notice] %></strong>
       <section class="content">
         <%= yield %>
       </section>

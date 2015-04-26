@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'property_listing/property_listing'
+
   resources :properties do
     resources :reviews
 end

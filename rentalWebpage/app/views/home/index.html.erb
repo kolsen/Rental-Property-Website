@@ -1,35 +1,18 @@
-<%= form_tag root_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
-<strong><%= flash[:notice] %></strong>
-<br><br>
+<br>
 <table>
   <tr style="text-align: left">
-    <th>Address: </th>
-    <th>Apt: </th>
-    <th>City: </th>
-    <th>State: </th>
-    <th>Zipcode: </th>
-    <th>Bedrooms: </th>
-    <th>Bathrooms: </th>
+    <th>Property Address (Address, City, State, Zip)</th>
     <th>Rating: </th>
     <th>Reviews: </th>
   </tr>
-  <% for property in @properties %>
-    <tr>
-      <td><%= link_to property.address, property %></td>
-      <td><%= link_to property.apartment, property %></td>
-      <td><%= link_to property.city, property %></td>
-      <td><%= link_to property.state, property %></td>
-      <td><%= link_to property.zipcode, property %></td>
-      <td><%= link_to property.rooms, property %></td>
-      <td><%= link_to property.bathrooms, property %></td>
-      <td>(1-5)</td>
-      <td><%= link_to property.reviews.count, property %></td>
-    </tr>
+  <% if @properties != nil %>
+    <% for property in @properties %>
+      <tr>
+        <td><%= link_to (property.address + " " + property.apartment + ", " + property.city + ", " + property.state + " " + property.zipcode), property %></td>
+        <td>(1-5)</td>
+        <td><%= link_to property.reviews.count, property %></td>
+      </tr>
+    <% end %>
   <% end %>
 </table><br>
 <strong><%= link_to 'Add New Property', new_property_path %></strong>
