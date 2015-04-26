@@ -33,6 +33,11 @@
 <% end %>
 
 <h2>Add a review:</h2>
+  <div class="small-2 large-4 columns">
+    <% if current_user %>
+    Rate the Review: <%= rating_for @reviews, "review" %>
+    <% end %>
+  </div>
 <%= form_for([@property, @property.reviews.build]) do |f| %>
   <p>
     <%= f.label :review %><br>
@@ -42,6 +47,8 @@
     <%= f.submit %>
   </p>
 <% end %>
+
+
 
 <strong><%= link_to 'Home', root_path %></strong> |
 <strong><%= link_to 'Edit', edit_property_path(@property) %></strong> |

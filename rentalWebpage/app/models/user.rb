@@ -8,5 +8,6 @@ class User < ActiveRecord::Base
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
     end
+      ratyrate_rater
   end
 end
