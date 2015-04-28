@@ -15,6 +15,7 @@ class PropertiesController < ApplicationController
   # GET /properties/new
   def new
     @property = Property.new
+    flash[:notice] = 'Please search for a rental property above.'
   end
 
   # GET /properties/1/edit

@@ -8,7 +8,10 @@
   <% if @properties != nil %>
     <% for property in @properties %>
       <tr>
-        <td><%= link_to (property.address + " " + property.apartment + ", " + property.city + ", " + property.state + " " + property.zipcode), property %></td>
+        <td>
+          <%= link_to (property.address + " " + property.apartment + ", " + 
+          property.city + ", " + property.state + " " + property.zipcode), property %>
+        </td>
         <td>(1-5)</td>
         <td><%= link_to property.reviews.count, property %></td>
       </tr>

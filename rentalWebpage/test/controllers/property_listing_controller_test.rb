@@ -5,5 +5,4 @@ class PropertyListingControllerTest < ActionController::TestCase
     get :property_listing
     assert_response :success
   end
-
 end

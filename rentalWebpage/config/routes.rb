@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   resources :properties do
     resources :reviews
+    member do
+      put "helpful", to: "reviews#helpful"      
+    end
 end
   
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
