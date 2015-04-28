@@ -8,8 +8,6 @@ class PropertyListingController < ApplicationController
         flash[:notice] = 'Sorry, we could not find that rental property. Please search again.'
         @properties = nil
       end
-    else 
-      flash[:notice] = 'Please search for a rental property above.'
     end
   end
 end
