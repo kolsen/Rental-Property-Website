@@ -15,7 +15,9 @@
         Welcome <strong><%= current_user.name %></strong>!
         <%= link_to "Sign out", signout_path, id: "sign_out" %>
       <% else %>
-        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+        <%= link_to "Sign in as Student", "/auth/facebook", id: "sign_in" %>
+        or
+        <%= link_to "Sign in as Landlord", logins_index_path %>
       <% end %>
 </div>
       <section class="content">

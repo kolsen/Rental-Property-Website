@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'logins/index'
+
   resources :properties do
     resources :reviews
 end
