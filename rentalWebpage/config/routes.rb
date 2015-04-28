@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+
   get 'property_listing/property_listing'
+  get 'logins/index'
 
   resources :properties do
     resources :reviews
