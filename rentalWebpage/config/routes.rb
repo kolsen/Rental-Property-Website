@@ -2,13 +2,15 @@ Rails.application.routes.draw do
 
   get 'property_listing/property_listing'
   get 'logins/index'
+  
+  post '/rate' => 'rater#create', :as => 'rate'
 
-  resources :properties do
-    resources :reviews
-    member do
-      put "helpful", to: "reviews#helpful"      
-    end
-end
+    resources :properties do
+      resources :reviews
+      member do
+        put "helpful", to: "reviews#helpful"      
+      end
+  end
   
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
