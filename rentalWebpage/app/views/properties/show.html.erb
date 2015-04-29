@@ -27,7 +27,9 @@
     <em><%= review.created_at.to_date %><br></em>
     <%= review.review %>
   </p>
-<%= button_to 'Like', helpful_property_path(@property, @property.reviews), method: :put %>
+  <input type="button" value="Like" onclick="alert('Thumbs Up!')">
+  <input type="button" value="Dislike" onclick="alert('Thumbs Down!')">
+  <!-- <%= button_to 'Like', helpful_property_path(@property, @property.reviews), method: :put %> -->
 <% end %>
 
 <h2>Add a review:</h2>
