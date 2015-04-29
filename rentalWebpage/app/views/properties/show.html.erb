@@ -2,12 +2,6 @@
 
 <h3>Property Details</h3>
 
-<div class="row">
-  <p><strong>Property Rating</strong></p>
-  <div class="small-2 large-2 columns">
-    <%= imdb_style_rating_for @property, current_user%>
-</div>
-
 <p><strong>Address:</strong><p>
 <p>
   <%= @property.address + " " + @property.apartment %>
@@ -43,7 +37,7 @@
 <h2>Add a review:</h2>
   <% if current_user %>
       <%= form_for([@property, @property.reviews.build]) do |f| %>
-    <div>Rating: <%= rating_for @property, "property" %></div>
+  <div>Rating: <%= rating_for @property, "property_rating" %></div>
     <p>
       <%= f.label :review %><br>
       <%= f.text_area :review %>
