@@ -1,0 +1,20 @@
+<br>
+  <% if @properties != nil %>
+    <table>
+      <tr style="text-align: left">
+        <th>Property Address</th>
+        <th>Rating: </th>
+        <th>Reviews: </th>
+      </tr>
+      <% for property in @properties %>
+        <tr>
+          <td><%= link_to (property.address + " " + property.apartment + ", " + property.city + ", " + property.state + " " + property.zipcode), property %></td>
+          <td>(1-5)</td>
+          <td><%= link_to property.reviews.count, property %></td>
+        </tr>
+      <% end %>
+    </table><br>
+  <% end %>
+<strong><%= link_to 'Home', root_path %></strong>
+<strong><%= link_to 'Add New Property', new_property_path %></strong>
+

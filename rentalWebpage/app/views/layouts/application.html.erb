@@ -10,6 +10,23 @@
       <header>
         <h1>Rental Property Listing</h1>
       </header>
+      <%= form_tag property_listing_property_listing_path, :method => 'get' do %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search", :name => nil %>
+        </p>
+      <% end %>
+      <strong><%= flash[:notice] %></strong>
+      <div id="user-widget">
+      <% if current_user %>
+        Welcome <strong><%= current_user.name %></strong>!
+        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <% else %>
+        <%= link_to "Sign in as Student", "/auth/facebook", id: "sign_in" %>
+        or
+        <%= link_to "Sign in as Landlord", logins_index_path %>
+      <% end %>
+      </div>
       <section class="content">
         <%= yield %>
       </section>

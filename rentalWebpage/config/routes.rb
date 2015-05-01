@@ -1,9 +1,22 @@
 Rails.application.routes.draw do
-  resources :properties do
-    resources :reviews
-end
 
-  get 'review/addReview'
+  get 'property_listing/property_listing'
+  get 'logins/index'
+  
+  post '/rate' => 'rater#create', :as => 'rate'
+
+    resources :properties do
+      resources :reviews
+      member do
+        put "helpful", to: "reviews#helpful"      
+      end
+  end
+  
+  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+
+  get "/addReview", controller: 'reviews', action: 'addReview', as: 'addReview'
 
   root controller: 'home', action: 'index'
 
