@@ -24,13 +24,16 @@
 <h2>Reviews</h2>
 
 <% @property.reviews.each do |review| %> 
-  <p id = "review">
+  <div id = "review">
+    <p>
     <em><%= review.created_at.to_date %><br></em>
     <%= review.review %>
   </p>
+  
   <input type="button" value="Like" onclick="alert('Thumbs Up!')">
   <input type="button" value="Dislike" onclick="alert('Thumbs Down!')">
-  <!-- <%= button_to 'Like', helpful_property_path(@property, @property.reviews), method: :put %> -->
+    
+</div>
 <% end %>
   
 <h2>Add a review:</h2>
