@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RentalWebpage</title>
+    <title>Rental Property Listing</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -20,28 +20,32 @@
         <header>
           <h1>Rental Property Listing</h1>
         </header>
+        
+        <div id="user-widget">
+          <% if current_user %>
+            Welcome <strong><%= current_user.name %></strong>!
+            <%= link_to "Sign out", signout_path, id: "sign_out" %>
+          <% else %>
+            <%= link_to "Sign in as Student", "/auth/facebook", id: "sign_in" %>
+            or
+            <%= link_to "Sign in as Landlord", logins_index_path %>
+          <% end %>
+        </div>
+        <br>
         <%= form_tag property_listing_property_listing_path, :method => 'get' do %>
           <p>
             <%= text_field_tag :search, params[:search] %>
             <%= submit_tag "Search", :name => nil %>
           </p>
         <% end %>
-        <strong><%= flash[:notice] %></strong>
-        <div id="user-widget">
-        <% if current_user %>
-          Welcome <strong><%= current_user.name %></strong>!
-          <%= link_to "Sign out", signout_path, id: "sign_out" %>
-        <% else %>
-          <%= link_to "Sign in as Student", "/auth/facebook", id: "sign_in" %>
-          or
-          <%= link_to "Sign in as Landlord", logins_index_path %>
-        <% end %>
-        </div>
+        
+        <p><strong><%= flash[:notice] %></strong></p>
+        
         <section class="content">
           <%= yield %>
         </section>
         <footer>
-          <h5>&copy;<%=Date.today.year %> Rental Property Review</h5>
+          <h5>&copy;<%=Date.today.year %> Rental Property Listing</h5>
         </footer>
       </div>
     </div>

@@ -1,16 +1,13 @@
 <br>
-<table class="table">
-  <tr style="text-align: left">
-    <th>Rental Property Address:</th>
-    <th>Reviews: </th>
-  </tr>
   <% if @properties != nil %>
+    <table class="table">
+      <tr style="text-align: left">
+        <th>Rental Property Address</th>
+        <th>Reviews</th>
+      </tr>
     <% for property in @properties %>
       <tr>
-        <td>
-          <%= link_to (property.address + " " + property.apartment + ", " + 
-          property.city + ", " + property.state + " " + property.zipcode), property %>
-        </td>
+        <td><%= link_to (property.address + " " + property.apartment + ", " + property.city + ", " + property.state + " " + property.zipcode), property %></td>
         <td><%= link_to property.reviews.count, property %></td>
       </tr>
     <% end %>
