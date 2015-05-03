@@ -1,8 +1,7 @@
 <br>
 <table>
   <tr style="text-align: left">
-    <th>Property Address (Address, City, State, Zip)</th>
-    <th>Rating: </th>
+    <th>Rental Property Address:</th>
     <th>Reviews: </th>
   </tr>
   <% if @properties != nil %>
@@ -12,7 +11,6 @@
           <%= link_to (property.address + " " + property.apartment + ", " + 
           property.city + ", " + property.state + " " + property.zipcode), property %>
         </td>
-        <td>(1-5)</td>
         <td><%= link_to property.reviews.count, property %></td>
       </tr>
     <% end %>
