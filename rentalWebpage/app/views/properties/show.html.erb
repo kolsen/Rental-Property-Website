@@ -1,60 +1,62 @@
-<p id="notice"><%= notice %></p>
-
-<h3>Property Details</h3>
-
-<p><strong>Address:</strong><p>
-<p>
-  <%= @property.address + " " + @property.apartment %>
-</p>
-
-<p>
-  <%= @property.city + ", " + @property.state + " " + @property.zipcode %>
-</p>
-
-<p>
-  <strong>Bedrooms:</strong>
-  <%= @property.rooms %>
-</p>
-
-<p>
-  <strong>Bathrooms:</strong>
-  <%= @property.bathrooms %>
-</p>
-
-<h2>Reviews</h2>
-
-<% @property.reviews.each do |review| %> 
-  <div id = "review">
+<div class="row">
+  <div class="col-sm-6">
+    <h3>Property Details</h3>
+    <br>
+    <p><strong>Address</strong><p>
     <p>
-    <em><%= review.created_at.to_date %><br></em>
-    <%= review.review %>
-  </p>
-  
-  <input type="button" value="Like" onclick="alert('Thumbs Up!')">
-  <input type="button" value="Dislike" onclick="alert('Thumbs Down!')">
-    
-</div>
-<% end %>
-  
-<h2>Add a review:</h2>
-  <% if current_user %>
-      <%= form_for([@property, @property.reviews.build]) do |f| %>
-  <div>Rating: <%= rating_for @property, "property_rating" %></div>
-    <p>
-      <%= f.label :review %><br>
-      <%= f.text_area :review %>
+      <%= @property.address + " " + @property.apartment %>
     </p>
+
     <p>
-      <%= f.submit %>
+      <%= @property.city + ", " + @property.state + " " + @property.zipcode %>
     </p>
+    <br>
+    <p>
+      <strong>Bedrooms:</strong>
+      <%= @property.rooms %>
+    </p>
+
+    <p>
+      <strong>Bathrooms:</strong>
+      <%= @property.bathrooms %>
+    </p>
+  </div>
+  <div class="col-sm-6">
+    <h3>Property Reviews</h3>
+
+    <% @property.reviews.each do |review| %> 
+      <div id = "review">
+        <p>
+        <em><%= review.created_at.to_date %><br></em>
+        <%= review.review %>
+      </p>
+
+      <input type="button" value="Like" onclick="alert('Thumbs Up!')">
+      <input type="button" value="Dislike" onclick="alert('Thumbs Down!')">
+
+    </div>
     <% end %>
-  <% else %>
-    <p><strong>Please sign in to review this property!</strong></p>
-<% end %>
 
+    <h3>Add a new review</h3>
+      <% if current_user %>
+          <%= form_for([@property, @property.reviews.build]) do |f| %>
+      <div>Property Rating: <%= rating_for @property, "property_rating" %></div>
+        <p>
+          <%= f.label :review %><br>
+          <%= f.text_area :review %>
+        </p>
+        <p>
+          <%= f.submit %>
+        </p>
+        <% end %>
+      <% else %>
+        <p><strong>Please sign in to review this property!</strong></p>
+    <% end %>
+  </div>
+</div>
 
 
 <strong><%= link_to 'Home', root_path %></strong> |
-<strong><%= link_to 'Edit', edit_property_path(@property) %></strong> |
+<!-- <strong><%= link_to 'Edit', edit_property_path(@property) %></strong> | ***Disabled*** --->
 <strong><%= link_to 'Add New Property', new_property_path %></strong>
 
