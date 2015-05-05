@@ -69,10 +69,10 @@ ActiveRecord::Schema.define(version: 20150426201817) do
 
   create_table "reviews", force: :cascade do |t|
     t.string   "review"
+    t.integer  "helpful_total"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "property_id"
-    t.integer  "helpful_total"
   end
 
   add_index "reviews", ["property_id"], name: "index_reviews_on_property_id"

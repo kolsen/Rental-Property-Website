@@ -29,14 +29,11 @@
         <p>
         <em><%= review.created_at.to_date %><br></em>
         <%= review.review %>
-      </p>
-
-      <input type="button" value="Like" onclick="alert('Thumbs Up!')">
-      <input type="button" value="Dislike" onclick="alert('Thumbs Down!')">
-
-    </div>
+        </p>
+        <%= button_to "Like",  helpful_property_review_path(@property, review), method: :put  %>
+        <%= review.helpful_total %> people found this helpful.
+      </div>
     <% end %>
-
     <h3>Add a new review</h3>
       <% if current_user %>
           <%= form_for([@property, @property.reviews.build]) do |f| %>
