@@ -35,7 +35,7 @@
       </div>
     <% end %>
     <h3>Add a new review</h3>
-      <% if !current_user %>
+      <% if current_user %>
           <%= form_for([@property, @property.reviews.build]) do |f| %>
       <div>Property Rating: <%= rating_for @property, "property_rating" %></div>
         <p>
