@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   
   post '/rate' => 'rater#create', :as => 'rate'
 
-    resources :properties do
-      resources :reviews
+  resources :properties do
+    resources :reviews do
       member do
-        put "helpful", to: "reviews#helpful"      
+        put "helpful", to: "reviews#helpful"
       end
+    end
   end
   
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]

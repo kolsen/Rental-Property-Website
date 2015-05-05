@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @properties = Property.all.last(10).reverse    
+    @properties = Property.includes(:reviews).order('reviews.created_at').limit(10).reverse
   end
 end
