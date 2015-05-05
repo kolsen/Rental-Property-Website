@@ -13,6 +13,18 @@
 
 ActiveRecord::Schema.define(version: 20150426201817) do
 
+  create_table "add_properties", force: :cascade do |t|
+    t.string   "address"
+    t.string   "apartment"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.integer  "rooms"
+    t.integer  "bathrooms"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
     t.integer  "rateable_id"
