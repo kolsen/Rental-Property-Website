@@ -31,7 +31,11 @@
         <%= review.review %>
         </p>
         <%= button_to "Like",  helpful_property_review_path(@property, review), method: :put  %>
-        <%= review.helpful_total %> people found this helpful.
+        <% if review.helpful_total %>
+          <%= review.helpful_total %> people found this helpful.
+        <% else %>
+          Be the first to like this!
+        <% end %>
       </div>
     <% end %>
     <h3>Add a new review</h3>
